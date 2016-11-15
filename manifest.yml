@@ -1,0 +1,12 @@
+applications:
+- path: .
+  memory: 512M
+  instances: 1
+  domain: mybluemix.net
+  name: rdt-IoT
+  host: rdt-IoT
+  disk_quota: 1024M
+  services:
+  - rdt-IoT-cloudantNoSQLDB
+  - rdt-IoT-iotf-service
+  command: node --max-old-space-size=384 node_modules/node-red/red.js --settings ./bluemix-settings.js -v
